@@ -1,0 +1,32 @@
+modLoader="javafml" #mandatory
+loaderVersion="[30,)" #mandatory 
+# issueTrackerURL="http://my.issue.tracker/" #optional
+logoFile="logo.png" #optional
+
+[[mods]] #mandatory
+	modId="sunbakamod" #mandatory
+	version="2.1.0" #mandatory	
+	displayName="Sun Baka Mod" #mandatory
+	# updateJSONURL="http://myurl.me/" #optional
+	# displayURL="http://example.com/" #optional
+	credits="Thanks To Drieeeeeeeeeeeemel." #optional
+	authors="HackerMeiser SunFlow" #optional
+	
+	description='''
+    This is a simple Mod.
+    It just adds a global Backpack
+    EZ PZ
+    '''
+
+[[dependencies.sunbakamod]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[30,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.sunbakamod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.1,)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "sunbakamod:block/chunkloader" },
+        "powered=true": { "model": "sunbakamod:block/chunkloader_on" }
+    }
+}

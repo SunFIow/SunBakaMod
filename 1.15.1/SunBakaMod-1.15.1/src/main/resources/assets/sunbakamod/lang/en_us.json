@@ -1,0 +1,18 @@
+{
+	"itemGroup.sunbaka": "Sun Baka",
+	
+	"item.sunbakamod.backpacksun": "SunFlow's Backpack",
+	"item.sunbakamod.backpackbaka": "Baka's Backpack",
+	"item.sunbakamod.enderpack": "Enderpack",
+	"item.sunbakamod.crafting_stick": "Crafting Table on a Stick",
+	"item.sunbakamod.experience_book": "XP Book",
+	
+	"key.categories.sunbakamod": "SunBakaMod",
+	
+	"key.sunbakamod.zoom": "Zoom",
+	"key.sunbakamod.overlay": "toggle Overlay",
+	
+	"enchantment.sunbakamod.timber": "Timber",
+	
+	"block.sunbakamod.chunkloader": "Chunk Loader"
+}

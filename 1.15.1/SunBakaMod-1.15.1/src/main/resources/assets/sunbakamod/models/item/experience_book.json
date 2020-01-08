@@ -1,0 +1,6 @@
+{
+   "parent": "item/generated",
+   "textures": {
+       "layer0": "sunbakamod:item/experience_book"
+   }
+}
