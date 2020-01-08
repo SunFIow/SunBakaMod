@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+	"PDP",
+	"PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:paper",
+      "item2": null
+    },
+    "D": {
+      "item": "minecraft:pink_dye"
+    }
+  },
+  "result": {
+    "item": "sunbakamod:backpacksun"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+	"POP",
+	"PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "sunbakamod:enderpack"
+  }
+}
