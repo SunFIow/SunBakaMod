@@ -1,7 +1,9 @@
-package com.sunflow.sunbakamod.enchantment;
+package com.sunflow.sunbakamod.setup;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.sunflow.sunbakamod.enchantment.EnchantmentTimber;
 
 import net.minecraft.enchantment.Enchantment;
 

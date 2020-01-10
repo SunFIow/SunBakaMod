@@ -3,8 +3,8 @@ package com.sunflow.sunbakamod.util.handlers;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sunflow.sunbakamod.enchantment.ModEnchantments;
 import com.sunflow.sunbakamod.setup.ModDimensions;
+import com.sunflow.sunbakamod.setup.ModEnchantments;
 import com.sunflow.sunbakamod.util.Log;
 import com.sunflow.sunbakamod.util.VersionHelper;
 

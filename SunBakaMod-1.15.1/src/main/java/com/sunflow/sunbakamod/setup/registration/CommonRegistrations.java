@@ -1,10 +1,10 @@
 package com.sunflow.sunbakamod.setup.registration;
 
 import com.sunflow.sunbakamod.SunBakaMod;
-import com.sunflow.sunbakamod.enchantment.ModEnchantments;
 import com.sunflow.sunbakamod.item.bag.BagContainer;
 import com.sunflow.sunbakamod.setup.ModBlocks;
 import com.sunflow.sunbakamod.setup.ModDimensions;
+import com.sunflow.sunbakamod.setup.ModEnchantments;
 import com.sunflow.sunbakamod.setup.ModItems;
 import com.sunflow.sunbakamod.util.Log;
 
