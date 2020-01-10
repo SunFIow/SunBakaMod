@@ -28,6 +28,9 @@ public class KeyBindingHandler {
 
 	@SubscribeEvent
 	public static void handleKeyInputEvent(InputEvent.KeyInputEvent event) {
-		if (KeyBindings.OVERLAY.isPressed()) SunBakaMod.showOverlay = !SunBakaMod.showOverlay;
+		if (KeyBindings.OVERLAY.isPressed()) {
+			SunBakaMod.CONFIG_SHOW_OVERLAY.set(!SunBakaMod.CONFIG_SHOW_OVERLAY.get());
+			SunBakaMod.CONFIG_SHOW_OVERLAY.save();
+		}
 	}
 }

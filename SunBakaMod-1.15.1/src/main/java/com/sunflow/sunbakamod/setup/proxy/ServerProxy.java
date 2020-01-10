@@ -6,6 +6,13 @@ import net.minecraft.world.World;
 
 public class ServerProxy extends CommonProxy {
 
+//	@Override
+//	public void setup() {
+//		super.setup();
+//		final IEventBus eventBus = MinecraftForge.EVENT_BUS;
+//		eventBus.register(ServerForgeEventHandlers.class);
+//	}
+
 	@Override
 	public Minecraft getMinecraft() {
 		throw new IllegalStateException("Only run this on the client!");

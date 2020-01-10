@@ -22,7 +22,7 @@ public class ChunkLoaderBlock extends BlockBase {
 	public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
 	public ChunkLoaderBlock() {
-		super("chunkloader", Material.IRON);
+		super("chunkloader", Block.Properties.create(Material.IRON).hardnessAndResistance(2.5f).lightValue(5));
 		setDefaultState(getDefaultState().with(POWERED, false));
 	}
 
@@ -31,10 +31,15 @@ public class ChunkLoaderBlock extends BlockBase {
 		if (!world.isRemote) {
 			TileEntity tile = world.getTileEntity(pos);
 			if (tile instanceof ChunkLoaderTile) {
-				((ChunkLoaderTile) tile).changeState(world, pos);
+				((ChunkLoaderTile) tile).click();
 			}
 		}
 		return ActionResultType.SUCCESS;
+	}
+
+	@Override
+	public int getLightValue(BlockState state) {
+		return state.get(POWERED) ? lightValue : 0;
 	}
 
 	@Override
@@ -55,5 +60,4 @@ public class ChunkLoaderBlock extends BlockBase {
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
 		return super.getStateForPlacement(context).with(POWERED, false);
 	}
-
 }

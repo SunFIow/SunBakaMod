@@ -13,11 +13,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 public class ClientProxy extends CommonProxy {
 
 	@Override
-	public void preSetup() {
-		super.preSetup();
-	}
-
-	@Override
 	public void setup() {
 		super.setup();
 		ClientRegistrations.registerScreens();

@@ -6,12 +6,10 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent;
 
 public class ScrollPacket extends BasePacket {
-//	private BagContainer container;
 	private double mouseX, mouseY, scrollDir;
 	private int guiLeft, guiTop;
 
 	public ScrollPacket(double mouseX, double mouseY, double scrollDir, int guiLeft, int guiTop) {
-//		this.container = container;
 		this.mouseX = mouseX;
 		this.mouseY = mouseY;
 		this.scrollDir = scrollDir;
@@ -20,7 +18,6 @@ public class ScrollPacket extends BasePacket {
 	}
 
 	public ScrollPacket(PacketBuffer buf) {
-//		this.container = container;
 		this.mouseX = buf.readDouble();
 		this.mouseY = buf.readDouble();
 		this.scrollDir = buf.readDouble();
@@ -28,9 +25,17 @@ public class ScrollPacket extends BasePacket {
 		this.guiTop = buf.readInt();
 	}
 
+	public static ScrollPacket decode(PacketBuffer buf) {
+		return new ScrollPacket(
+				buf.readDouble(),
+				buf.readDouble(),
+				buf.readDouble(),
+				buf.readInt(),
+				buf.readInt());
+	}
+
 	@Override
 	public void encode(PacketBuffer buf) {
-//		buf.writeInt(experienceTotal);
 		buf.writeDouble(mouseX);
 		buf.writeDouble(mouseY);
 		buf.writeDouble(scrollDir);

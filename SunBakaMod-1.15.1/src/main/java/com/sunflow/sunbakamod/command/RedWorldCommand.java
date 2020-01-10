@@ -62,6 +62,7 @@ public class RedWorldCommand extends BaseCommand implements Command<CommandSourc
 		oldDimTag.putFloat("yaw", player.rotationYaw);
 		oldDimTag.putBoolean("flying", player.abilities.isFlying);
 		oldDimTag.putString("gamemode", player.interactionManager.getGameType().getName());
+		oldDimTag.putInt("experience", player.experienceTotal);
 
 		playerData.put(oldDim.toString(), oldDimTag);
 
@@ -83,6 +84,6 @@ public class RedWorldCommand extends BaseCommand implements Command<CommandSourc
 		player.abilities.isFlying = newDimTag.getBoolean("flying");
 		GameType newGameType = GameType.getByName(newDimTag.getString("gamemode"));
 		player.setGameType(newGameType != GameType.NOT_SET ? newGameType : GameType.CREATIVE);
-		player.giveExperiencePoints(0);
+		player.giveExperiencePoints(newDimTag.getInt("experience") - player.experienceTotal);
 	}
 }

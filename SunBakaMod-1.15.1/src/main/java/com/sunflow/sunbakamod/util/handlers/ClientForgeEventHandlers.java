@@ -9,7 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 public class ClientForgeEventHandlers {
 	@SubscribeEvent
 	public static void onRenderOverlayText(RenderGameOverlayEvent.Text event) {
-		if (!SunBakaMod.proxy.getMinecraft().gameSettings.showDebugInfo && SunBakaMod.showOverlay) {
+		if (!SunBakaMod.proxy.getMinecraft().gameSettings.showDebugInfo && SunBakaMod.CONFIG_SHOW_OVERLAY.get()) {
 			BlockPos pos = SunBakaMod.proxy.getClientPlayer().getPosition();
 			event.getLeft().add(0, String.format("X: %s, Y: %s, Z: %s", pos.getX(), pos.getY(), pos.getZ()));
 			event.getLeft().add(0, String.format("%sfps", SunBakaMod.proxy.getMinecraft().debug.split("fps")[0]));

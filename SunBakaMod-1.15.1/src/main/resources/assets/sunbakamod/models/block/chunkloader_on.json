@@ -1,5 +1,6 @@
 {
-    "variants": {
-        "": { "model": "sunbakamod:block/chunkloader_on" }
-    }
+	"parent": "block/cube_all",
+	   "textures": {
+	       "all": "sunbakamod:block/chunkloader_on"
+	   }
 }

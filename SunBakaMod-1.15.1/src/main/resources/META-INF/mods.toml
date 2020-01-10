@@ -5,7 +5,7 @@ logoFile="logo.png" #optional
 
 [[mods]] #mandatory
 	modId="sunbakamod" #mandatory
-	version="2.1.0" #mandatory	
+	version="2.2.0" #mandatory	
 	displayName="Sun Baka Mod" #mandatory
 	# updateJSONURL="http://myurl.me/" #optional
 	# displayURL="http://example.com/" #optional
