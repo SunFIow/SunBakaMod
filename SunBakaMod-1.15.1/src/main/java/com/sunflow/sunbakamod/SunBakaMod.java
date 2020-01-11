@@ -28,7 +28,7 @@ import net.minecraftforge.versions.mcp.MCPVersion;
 public class SunBakaMod {
 	public static final String MODID = "sunbakamod";
 	public static final String NAME = "Sun Baka Mod";
-	public static final String VERSION = "2.2.0";
+	public static final String VERSION = "2.2.1";
 	public static final String ACCEPTED_VERSION = "[1.15.1,)";
 
 	public static SunBakaMod INSTANCE;
@@ -78,10 +78,10 @@ public class SunBakaMod {
 	}
 
 	private static void loadChunkLoaders(MinecraftServer server) {
-		Log.warn("data_cl: " + data.chunkloader);
+		Log.debug("data_cl: " + data.chunkloader);
 		for (int i = data.chunkloader.size() - 1; i >= 0; i--) {
 			ChunkLoader cl = data.chunkloader.get(i);
-			Log.warn("{} , {}", cl.getType(), cl.powered);
+			Log.debug("{} , {}", cl.getType(), cl.powered);
 			ServerWorld world = server.getWorld(cl.getType());
 			if (world.getTileEntity(cl.pos) instanceof ChunkLoaderTile) {
 				if (cl.powered) ChunkLoaderTile.forceChunk(world, cl.pos, cl.chunkPos, cl.powered);

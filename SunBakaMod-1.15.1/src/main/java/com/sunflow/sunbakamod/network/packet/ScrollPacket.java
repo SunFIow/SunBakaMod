@@ -25,15 +25,6 @@ public class ScrollPacket extends BasePacket {
 		this.guiTop = buf.readInt();
 	}
 
-	public static ScrollPacket decode(PacketBuffer buf) {
-		return new ScrollPacket(
-				buf.readDouble(),
-				buf.readDouble(),
-				buf.readDouble(),
-				buf.readInt(),
-				buf.readInt());
-	}
-
 	@Override
 	public void encode(PacketBuffer buf) {
 		buf.writeDouble(mouseX);

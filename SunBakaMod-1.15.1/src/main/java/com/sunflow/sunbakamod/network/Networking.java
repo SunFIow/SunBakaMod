@@ -63,11 +63,6 @@ public class Networking {
 				.consumer(ScrollPacket::onMessage)
 				.add();
 
-		channel.messageBuilder(ScrollPacket.class, nextID())
-				.encoder(ScrollPacket::encode)
-				.decoder(ScrollPacket::decode)
-				.consumer(ScrollPacket::onMessage)
-				.add();
 		return channel;
 	}
 

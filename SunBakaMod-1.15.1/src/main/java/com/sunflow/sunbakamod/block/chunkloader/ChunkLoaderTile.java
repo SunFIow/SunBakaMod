@@ -2,6 +2,7 @@ package com.sunflow.sunbakamod.block.chunkloader;
 
 import com.sunflow.sunbakamod.SunBakaMod;
 import com.sunflow.sunbakamod.setup.ModBlocks;
+import com.sunflow.sunbakamod.util.Log;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
@@ -24,14 +25,17 @@ public class ChunkLoaderTile extends TileEntity {
 
 	public void click() {
 		powered = !powered;
-		if (chunkPos == null) chunkPos = new ChunkPos(pos);
-		forceChunk(world, pos, chunkPos, powered);
+		forceChunk(world, pos, chunkPos(), powered);
 		markDirty();
 	}
 
 	@Override
 	public void remove() {
-		SunBakaMod.data.removeChunkLoader(world.dimension.getType(), powered, pos, chunkPos);
+		if (world != null) {
+			SunBakaMod.data.removeChunkLoader(world.dimension.getType(), powered, pos, chunkPos());
+//			forceChunk(world, pos, chunkPos, false);
+		} else
+			Log.error("ChunkLoaderTile#remove: world was null");
 		super.remove();
 	}
 
@@ -40,8 +44,7 @@ public class ChunkLoaderTile extends TileEntity {
 		CompoundNBT tag = getTileData();
 
 		tag.putBoolean("powered", powered);
-		if (chunkPos == null) chunkPos = new ChunkPos(pos);
-		tag.putLong("chunkPos", chunkPos.asLong());
+		tag.putLong("chunkPos", chunkPos().asLong());
 
 		SunBakaMod.data.addChunkLoader(world.dimension.getType(), powered, pos, chunkPos);
 
@@ -62,5 +65,10 @@ public class ChunkLoaderTile extends TileEntity {
 
 		BlockState state = world.getBlockState(pos);
 		if (state.get(POWERED) != newState) world.setBlockState(pos, state.with(POWERED, newState), 3);
+	}
+
+	private ChunkPos chunkPos() {
+		if (chunkPos == null) chunkPos = new ChunkPos(pos);
+		return chunkPos;
 	}
 }
