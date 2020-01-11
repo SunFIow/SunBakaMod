@@ -19,45 +19,27 @@ public enum KeyBindings {
 				"key.categories." + SunBakaMod.MODID);
 	}
 
-	public KeyBinding getKeybind() {
-		return keybinding;
-	}
+	public KeyBinding getKeybind() { return keybinding; }
 
-	public boolean isPressed() {
-		return keybinding.isPressed();
-	}
+	public boolean isPressed() { return keybinding.isPressed(); }
 
-	public boolean isDown() {
-		return keybinding.isKeyDown();
-	}
+	public boolean isDown() { return keybinding.isKeyDown(); }
 
-	public boolean hasCustomHandler() {
-		return hasCustomHandler;
-	}
+	public boolean hasCustomHandler() { return hasCustomHandler; }
 
 	public static ArrayList<KeyBindings> getPressedKeys() {
 		ArrayList<KeyBindings> pressedKeys = new ArrayList<KeyBindings>();
-		for (KeyBindings key : KeyBindings.values()) {
-			if (key.isPressed()) {
-				pressedKeys.add(key);
-			}
-		}
+		for (KeyBindings key : KeyBindings.values()) if (key.isPressed()) pressedKeys.add(key);
 		return pressedKeys;
 	}
 
 	public static ArrayList<KeyBindings> getDownKeys() {
 		ArrayList<KeyBindings> downKeys = new ArrayList<KeyBindings>();
-		for (KeyBindings key : KeyBindings.values()) {
-			if (key.isDown()) {
-				downKeys.add(key);
-			}
-		}
+		for (KeyBindings key : KeyBindings.values()) if (key.isDown()) downKeys.add(key);
 		return downKeys;
 	}
 
 	public static void register() {
-		for (KeyBindings key : KeyBindings.values()) {
-			ClientRegistry.registerKeyBinding(key.getKeybind());
-		}
+		for (KeyBindings key : KeyBindings.values()) ClientRegistry.registerKeyBinding(key.getKeybind());
 	}
 }
