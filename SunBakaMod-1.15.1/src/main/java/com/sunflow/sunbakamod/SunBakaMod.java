@@ -33,9 +33,7 @@ public class SunBakaMod {
 
 	public static SunBakaMod INSTANCE;
 
-	public static SunBakaMod getInstance() {
-		return INSTANCE;
-	}
+	public static SunBakaMod getInstance() { return INSTANCE; }
 
 	public static CommonProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
