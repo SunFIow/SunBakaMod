@@ -18,7 +18,7 @@ import net.minecraftforge.fml.network.simple.SimpleChannel;
 public class Networking {
 	private static int ID = 0;
 
-	public static final String SUNBAKAMOD_NETMARKER = SunBakaMod.MODID.toUpperCase();;
+	public static final String SUNBAKAMOD_NETMARKER = SunBakaMod.MODID.toUpperCase();
 	public static final int SUNBAKAMOD_NETVERSION = 1;
 	public static final String NETVERSION = SUNBAKAMOD_NETMARKER + ":" + SUNBAKAMOD_NETVERSION;
 
@@ -49,12 +49,6 @@ public class Networking {
 				.encoder(XPBookPacket::encode)
 				.decoder(XPBookPacket::new)
 				.consumer(XPBookPacket::onMessage)
-				.add();
-
-		channel.messageBuilder(ScrollPacket.class, nextID())
-				.encoder(ScrollPacket::encode)
-				.decoder(ScrollPacket::new)
-				.consumer(ScrollPacket::onMessage)
 				.add();
 
 		channel.messageBuilder(ScrollPacket.class, nextID())

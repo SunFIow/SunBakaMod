@@ -55,7 +55,6 @@ public class SunBakaMod {
 		INSTANCE = this;
 
 		proxy.preSetup();
-
 	}
 
 	@SubscribeEvent
